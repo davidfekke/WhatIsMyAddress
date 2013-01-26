@@ -20,6 +20,9 @@
 		018BF87E163CAE12009C808C /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 018BF87C163CAE12009C808C /* MainStoryboard_iPad.storyboard */; };
 		018BF881163CAE12009C808C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BF880163CAE12009C808C /* MainViewController.m */; };
 		018BF884163CAE12009C808C /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BF883163CAE12009C808C /* FlipsideViewController.m */; };
+		018BF88B163CB038009C808C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018BF88A163CB038009C808C /* CoreLocation.framework */; };
+		632A7ED2163D88BC00A930CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632A7ED1163D88BC00A930CA /* MapKit.framework */; };
+		632A7ED6163DA52F00A930CA /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A7ED5163DA52F00A930CA /* MapPin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,10 @@
 		018BF880163CAE12009C808C /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		018BF882163CAE12009C808C /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		018BF883163CAE12009C808C /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		018BF88A163CB038009C808C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		632A7ED1163D88BC00A930CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		632A7ED4163DA52F00A930CA /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		632A7ED5163DA52F00A930CA /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632A7ED2163D88BC00A930CA /* MapKit.framework in Frameworks */,
+				018BF88B163CB038009C808C /* CoreLocation.framework in Frameworks */,
 				018BF862163CAE11009C808C /* UIKit.framework in Frameworks */,
 				018BF864163CAE11009C808C /* Foundation.framework in Frameworks */,
 				018BF866163CAE11009C808C /* CoreGraphics.framework in Frameworks */,
@@ -61,6 +70,7 @@
 		018BF852163CAE11009C808C = {
 			isa = PBXGroup;
 			children = (
+				632A7ED1163D88BC00A930CA /* MapKit.framework */,
 				018BF867163CAE11009C808C /* WhatIsMyAddress */,
 				018BF860163CAE11009C808C /* Frameworks */,
 				018BF85E163CAE11009C808C /* Products */,
@@ -78,6 +88,7 @@
 		018BF860163CAE11009C808C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				018BF88A163CB038009C808C /* CoreLocation.framework */,
 				018BF861163CAE11009C808C /* UIKit.framework */,
 				018BF863163CAE11009C808C /* Foundation.framework */,
 				018BF865163CAE11009C808C /* CoreGraphics.framework */,
@@ -97,6 +108,8 @@
 				018BF882163CAE12009C808C /* FlipsideViewController.h */,
 				018BF883163CAE12009C808C /* FlipsideViewController.m */,
 				018BF868163CAE12009C808C /* Supporting Files */,
+				632A7ED4163DA52F00A930CA /* MapPin.h */,
+				632A7ED5163DA52F00A930CA /* MapPin.m */,
 			);
 			path = WhatIsMyAddress;
 			sourceTree = "<group>";
@@ -186,6 +199,7 @@
 				018BF872163CAE12009C808C /* AppDelegate.m in Sources */,
 				018BF881163CAE12009C808C /* MainViewController.m in Sources */,
 				018BF884163CAE12009C808C /* FlipsideViewController.m in Sources */,
+				632A7ED6163DA52F00A930CA /* MapPin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,10 +288,15 @@
 		018BF888163CAE12009C808C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhatIsMyAddress/WhatIsMyAddress-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "WhatIsMyAddress/WhatIsMyAddress-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -285,10 +304,15 @@
 		018BF889163CAE12009C808C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhatIsMyAddress/WhatIsMyAddress-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "WhatIsMyAddress/WhatIsMyAddress-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -312,6 +336,7 @@
 				018BF889163CAE12009C808C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
